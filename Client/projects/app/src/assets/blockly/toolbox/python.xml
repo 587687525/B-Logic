@@ -1,0 +1,967 @@
+<xml>
+    <category name="基础-Python">
+        <category name="常用语句" colour="#aaaaaa">
+            <block type="text_output_more">
+                <value name="ADD0">
+                    <block type="text">
+                        <field name="TEXT"></field>
+                    </block>
+                </value>
+            </block>
+            <block type="controls_if"/>
+            <block type="controls_repeat_ext">
+                <value name="TIMES">
+                    <shadow type="math_number">
+                        <field name="NUM">10</field>
+                    </shadow>
+                </value>
+            </block>
+            <block type="math_number" gap="32">
+                <field name="NUM">123</field>
+            </block>
+            <block type="text"/>
+            <block type="math_arithmetic">
+                <value name="A">
+                    <shadow type="math_number">
+                        <field name="NUM">1</field>
+                    </shadow>
+                </value>
+                <value name="B">
+                    <shadow type="math_number">
+                        <field name="NUM">1</field>
+                    </shadow>
+                </value>
+            </block>
+            <block type="logic_compare"/>
+            <block type="time_sleep">
+                <value name="A0">
+                    <shadow type="math_number">
+                        <field name="NUM">1</field>
+                    </shadow>
+                </value>
+            </block>
+            <block type="explain"/>
+            <block type="puzzle_block"/>
+        </category>
+        <category name="循环" categorystyle="loop_category">
+            <block type="controls_repeat_ext">
+                <value name="TIMES">
+                    <shadow type="math_number">
+                        <field name="NUM">10</field>
+                    </shadow>
+                </value>
+            </block>
+            <block type="controls_repeat"/>
+            <block type="controls_whileUntil"/>
+            <block type="controls_loops_range">
+                <value name="A1">
+                    <shadow type="math_number">
+                        <field name="NUM">1</field>
+                    </shadow>
+                </value>
+                <value name="A2">
+                    <shadow type="math_number">
+                        <field name="NUM">10</field>
+                    </shadow>
+                </value>
+            </block>
+            <block type="controls_forEach"/>
+            <block type="controls_for">
+                <value name="FROM">
+                    <shadow type="math_number">
+                        <field name="NUM">1</field>
+                    </shadow>
+                </value>
+                <value name="TO">
+                    <shadow type="math_number">
+                        <field name="NUM">10</field>
+                    </shadow>
+                </value>
+                <value name="BY">
+                    <shadow type="math_number">
+                        <field name="NUM">1</field>
+                    </shadow>
+                </value>
+            </block>
+            <block type="base_more_enum">
+                <value name="SEQUENCE">
+                    <block type="variables_get">
+                        <field name="VAR">Sequ</field>
+                    </block>
+                </value>
+            </block>
+            <block type="base_more_enum_from">
+                <value name="SEQUENCE">
+                    <block type="variables_get">
+                        <field name="VAR">Sequ</field>
+                    </block>
+                </value>
+                <value name="START">
+                    <shadow type="math_number">
+                        <field name="NUM">0</field>
+                    </shadow>
+                </value>
+            </block>
+            <block type="controls_flow_statements"/>
+        </category>
+        <category name="逻辑" categorystyle="logic_category">
+            <block type="controls_if"/>
+            <block type="logic_compare_plus"/>
+            <block type="logic_operation"/>
+            <block type="logic_negate"/>
+            <block type="logic_boolean"/>
+            <block type="logic_null"/>
+            <block type="logic_ternary"/>
+        </category>
+        <category name="数学" categorystyle="math_category">
+            <block type="math_number" gap="32">
+                <field name="NUM">123</field>
+            </block>
+            <block type="math_calculate">
+                <value name="A0">
+                    <shadow type="math_number">
+                        <field name="NUM">1</field>
+                    </shadow>
+                </value>
+                <value name="A2">
+                    <shadow type="math_number">
+                        <field name="NUM">1</field>
+                    </shadow>
+                </value>
+            </block>
+            <block type="math_single">
+                <value name="NUM">
+                    <shadow type="math_number">
+                        <field name="NUM">9</field>
+                    </shadow>
+                </value>
+            </block>
+            <block type="math_trig">
+                <value name="NUM">
+                    <shadow type="math_number">
+                        <field name="NUM">45</field>
+                    </shadow>
+                </value>
+            </block>
+            <block type="math_constant"/>
+            <block type="math_number_property">
+                <value name="NUMBER_TO_CHECK">
+                    <shadow type="math_number">
+                        <field name="NUM">0</field>
+                    </shadow>
+                </value>
+            </block>
+            <block type="math_round">
+                <value name="NUM">
+                    <shadow type="math_number">
+                        <field name="NUM">3.1</field>
+                    </shadow>
+                </value>
+            </block>
+            <block type="math_round_with"></block>
+            <block type="math_on_list"></block>
+            <block type="math_modulo">
+                <value name="DIVIDEND">
+                    <shadow type="math_number">
+                        <field name="NUM">64</field>
+                    </shadow>
+                </value>
+                <value name="DIVISOR">
+                    <shadow type="math_number">
+                        <field name="NUM">10</field>
+                    </shadow>
+                </value>
+            </block>
+            <block type="math_constrain">
+                <value name="VALUE">
+                    <shadow type="math_number">
+                        <field name="NUM">50</field>
+                    </shadow>
+                </value>
+                <value name="LOW">
+                    <shadow type="math_number">
+                        <field name="NUM">1</field>
+                    </shadow>
+                </value>
+                <value name="HIGH">
+                    <shadow type="math_number">
+                        <field name="NUM">100</field>
+                    </shadow>
+                </value>
+            </block>
+            <block type="math_random_int">
+                <value name="FROM">
+                    <shadow type="math_number">
+                        <field name="NUM">1</field>
+                    </shadow>
+                </value>
+                <value name="TO">
+                    <shadow type="math_number">
+                        <field name="NUM">100</field>
+                    </shadow>
+                </value>
+            </block>
+            <block type="math_random_float"></block>
+            <block type="math_atan2">
+                <value name="X">
+                    <shadow type="math_number">
+                        <field name="NUM">1</field>
+                    </shadow>
+                </value>
+                <value name="Y">
+                    <shadow type="math_number">
+                        <field name="NUM">1</field>
+                    </shadow>
+                </value>
+            </block>
+        </category>
+        <category name="文本" categorystyle="text_category">
+            <block type="text"></block>
+            <block type="text_multiline"></block>
+            <block type="text_join"></block>
+            <block type="text_connect">
+                <value name="A0">
+                    <shadow type="text">
+                        <field name="TEXT"></field>
+                    </shadow>
+                </value>
+                <value name="A1">
+                    <shadow type="text">
+                        <field name="TEXT"></field>
+                    </shadow>
+                </value>
+            </block>
+            <block type="text_to_int"></block>
+            <block type="text_to_float"></block>
+            <block type="number_to_text"></block>
+            <block type="text_append">
+                <value name="TEXT">
+                    <shadow type="text"></shadow>
+                </value>
+            </block>
+            <block type="text_length">
+                <value name="VALUE">
+                    <shadow type="text">
+                        <field name="TEXT">abc</field>
+                    </shadow>
+                </value>
+            </block>
+            <block type="text_isEmpty">
+                <value name="VALUE">
+                    <shadow type="text">
+                        <field name="TEXT"></field>
+                    </shadow>
+                </value>
+            </block>
+            <block type="text_indexOf">
+                <value name="VALUE">
+                    <block type="variables_get">
+                        <field name="VAR">text</field>
+                    </block>
+                </value>
+                <value name="FIND">
+                    <shadow type="text">
+                        <field name="TEXT">abc</field>
+                    </shadow>
+                </value>
+            </block>
+            <block type="text_charAt">
+                <value name="VALUE">
+                    <block type="variables_get">
+                        <field name="VAR">text</field>
+                    </block>
+                </value>
+            </block>
+            <block type="text_getSubstring">
+                <value name="STRING">
+                    <block type="variables_get">
+                        <field name="VAR">text</field>
+                    </block>
+                </value>
+            </block>
+            <block type="text_changeCase">
+                <value name="TEXT">
+                    <shadow type="text">
+                        <field name="TEXT">abc</field>
+                    </shadow>
+                </value>
+            </block>
+            <block type="text_trim">
+                <value name="TEXT">
+                    <shadow type="text">
+                        <field name="TEXT">abc</field>
+                    </shadow>
+                </value>
+            </block>
+            <block type="text_count">
+                <value name="SUB">
+                    <shadow type="text"></shadow>
+                </value>
+                <value name="TEXT">
+                    <shadow type="text"></shadow>
+                </value>
+            </block>
+            <block type="text_replace">
+                <value name="FROM">
+                    <shadow type="text"></shadow>
+                </value>
+                <value name="TO">
+                    <shadow type="text"></shadow>
+                </value>
+                <value name="TEXT">
+                    <shadow type="text"></shadow>
+                </value>
+            </block>
+            <block type="text_reverse">
+                <value name="TEXT">
+                    <shadow type="text"></shadow>
+                </value>
+            </block>
+            <label text="Input/Output:" web-class="ioLabel"></label>
+            <block type="text_output_more">
+                <value name="ADD0">
+                    <block type="text">
+                        <field name="TEXT"></field>
+                    </block>
+                </value>
+            </block>
+            <block type="text_input_new">
+                <value name="A1">
+                    <shadow type="text">
+                        <field name="TEXT">请输入内容</field>
+                    </shadow>
+                </value>
+            </block>
+        </category>
+        <category name="集合" categorystyle="list_category">
+            <label text="创建:" web-class="setLabel"></label>
+            <block type="lists_new_coll"></block>
+            <block type="lists_create_with"></block>
+            <block type="lists_dict_new_coll"></block>
+            <block type="lists_new_num"></block>
+            <block type="lists_repeat">
+                <value name="NUM">
+                    <shadow type="math_number">
+                        <field name="NUM">5</field>
+                    </shadow>
+                </value>
+            </block>
+            <block type="lists_split">
+                <value name="DELIM">
+                    <shadow type="text">
+                        <field name="TEXT">,</field>
+                    </shadow>
+                </value>
+            </block>
+            <label text="读写:" web-class="setLabel"></label>
+            <block type="lists_getIndex_new1">
+                <value name="LIST">
+                    <block type="variables_get">
+                        <field name="VAR">list</field>
+                    </block>
+                </value>
+                <value name="INDEX">
+                    <shadow type="math_number">
+                        <field name="NUM">1</field>
+                    </shadow>
+                </value>
+            </block>
+            <block type="lists_getIndex_new2">
+                <value name="LIST">
+                    <block type="variables_get">
+                        <field name="VAR">list</field>
+                    </block>
+                </value>
+            </block>
+            <block type="lists_setValue_new1">
+                <value name="LIST">
+                    <block type="variables_get">
+                        <field name="VAR">list</field>
+                    </block>
+                </value>
+                <value name="INDEX">
+                    <shadow type="math_number">
+                        <field name="NUM">1</field>
+                    </shadow>
+                </value>
+                <value name="VALUE">
+                    <shadow type="math_number">
+                        <field name="NUM">0</field>
+                    </shadow>
+                </value>
+            </block>
+            <block type="lists_setValue_new2">
+                <value name="LIST">
+                    <block type="variables_get">
+                        <field name="VAR">list</field>
+                    </block>
+                </value>
+                <value name="VALUE">
+                    <shadow type="math_number">
+                        <field name="NUM">0</field>
+                    </shadow>
+                </value>
+            </block>
+            <label text="功能:" web-class="setLabel"></label>
+            <block type="lists_indexOf_new">
+                <value name="LIST">
+                    <block type="variables_get">
+                        <field name="VAR">list</field>
+                    </block>
+                </value>
+            </block>
+            <block type="lists_length"></block>
+            <block type="lists_reverse"></block>
+            <block type="lists_sort"></block>
+            <block type="lists_isEmpty"></block>
+        </category>
+    </category>
+
+    <category name="进阶语法-Python">
+        <category name="变量" categorystyle="variable_category">
+            <label text="通用变量" style="varLabel"></label>
+            <button text="创建通用变量" callbackKey="varCreateAny"></button>
+            <block type="variables_get">
+                <field name="VAR">a</field>
+            </block>
+            <block type="variables_set">
+                <field name="VAR">a</field>
+            </block>
+            <block type="variables_split"></block>
+            <label text="数学变量" style="varLabel"></label>
+            <button text="创建数字变量" callbackKey="varCreateNumber"></button>
+            <block type="variables_get_number"></block>
+            <block type="variables_set_number">
+                <value name="VALUE">
+                    <shadow type="math_number">
+                        <field name="NUM">0</field>
+                    </shadow>
+                </value>
+            </block>
+            <block type="variables_add_number">
+                <value name="VALUE">
+                    <shadow type="math_number">
+                        <field name="NUM">1</field>
+                    </shadow>
+                </value>
+            </block>
+            <label text="文本变量" style="varLabel"></label>
+            <button text="创建文本变量" callbackKey="varCreateString"></button>
+            <block type="variables_get_string"></block>
+            <block type="variables_set_string">
+                <value name="VALUE">
+                    <shadow type="text">
+                        <field name="TEXT"></field>
+                    </shadow>
+                </value>
+            </block>
+            <block type="variables_add_string">
+                <value name="VALUE">
+                    <shadow type="text">
+                        <field name="TEXT"></field>
+                    </shadow>
+                </value>
+            </block>
+            <label text="布尔值变量" style="varLabel"></label>
+            <button text="创建布尔值变量" callbackKey="varCreateBoolean"></button>
+            <block type="variables_get_boolean"></block>
+            <block type="variables_set_boolean">
+                <value name="VALUE">
+                    <shadow type="logic_boolean"></shadow>
+                </value>
+            </block>
+        </category>
+        <category name="函数" categorystyle="procedure_category" custom="PROCEDURE"></category>
+        <category name="对象">
+            <label text="定义/构造" web-class="classLabel"></label>
+            <block type="class_define"></block>
+            <block type="class_new"></block>
+            <block type="class_define_func"></block>
+            <block type="class_define_func_init"></block>
+            <block type="class_func_return"></block>
+            <label text="对象属性" web-class="classLabel"></label>
+            <block type="class_attr_get"></block>
+            <block type="class_attr_set"></block>
+            <block type="class_attr_call"></block>
+        </category>
+        <category name="自定义块" colour="#888888">
+            <block type="explain"></block>
+            <block type="explain_multi"></block>
+            <block type="puzzle"></block>
+            <block type="puzzle_block_attr"></block>
+            <block type="puzzle_block"></block>
+        </category>
+    </category>
+
+    <category name="功能">
+        <category name="时间">
+            <block type="time_sleep">
+                <value name="A0">
+                    <shadow type="math_number">
+                        <field name="NUM">1</field>
+                    </shadow>
+                </value>
+            </block>
+            <block type="time_now_time"/>
+            <block type="time_to_str">
+                <value name="A0">
+                    <block type="variables_get">
+                        <field name="VAR">tuple</field>
+                    </block>
+                </value>
+            </block>
+            <block type="time_to_struct">
+                <value name="A0">
+                    <shadow type="math_number">
+                        <field name="NUM">0</field>
+                    </shadow>
+                </value>
+            </block>
+        </category>
+        <category name="文件读写">
+            <block type="file_open">
+                <value name="A1">
+                    <block type="text">
+                        <field name="TEXT">path</field>
+                    </block>
+                </value>
+            </block>
+            <block type="file_close">
+                <value name="A0">
+                    <block type="variables_get">
+                        <field name="VAR">a</field>
+                    </block>
+                </value>
+            </block>
+            <block type="file_read">
+                <value name="A0">
+                    <block type="variables_get">
+                        <field name="VAR">a</field>
+                    </block>
+                </value>
+            </block>
+            <block type="file_readlines">
+                <value name="A0">
+                    <block type="variables_get">
+                        <field name="VAR">a</field>
+                    </block>
+                </value>
+            </block>
+            <block type="file_write">
+                <value name="A0">
+                    <block type="text">
+                        <field name="TEXT">Hello World!</field>
+                    </block>
+                </value>
+                <value name="A1">
+                    <block type="variables_get">
+                        <field name="VAR">a</field>
+                    </block>
+                </value>
+            </block>
+        </category>
+        <category name="图像读写">
+            <block type="cv2_imread">
+                <value name="A0">
+                    <block type="text">
+                        <field name="TEXT">1.jpg</field>
+                    </block>
+                </value>
+            </block>
+            <block type="cv2_cap_get"></block>
+            <block type="cv2_imwrite">
+                <value name="A0">
+                    <block type="variables_get">
+                        <field name="VAR">img</field>
+                    </block>
+                </value>
+                <value name="A1">
+                    <block type="text">
+                        <field name="TEXT">1.jpg</field>
+                    </block>
+                </value>
+            </block>
+            <block type="cv2_imshow">
+                <value name="A0">
+                    <block type="variables_get">
+                        <field name="VAR">img</field>
+                    </block>
+                </value>
+            </block>
+        </category>
+        <category name="图像处理">
+            <block type="transforms_Resize">
+                <value name="A0">
+                    <shadow type="math_number">
+                        <field name="NUM">640</field>
+                    </shadow>
+                </value>
+                <value name="A1">
+                    <shadow type="math_number">
+                        <field name="NUM">640</field>
+                    </shadow>
+                </value>
+            </block>
+        </category>
+        <category name="图表"></category>
+    </category>
+
+    <category name="云服务">
+        <category name="百度AI">
+            <label text="初始化" web-class="classLabel"></label>
+            <block type="bdai_set_aas">
+                <value name="A0">
+                    <shadow type="text">
+                        <field name="TEXT"></field>
+                    </shadow>
+                </value>
+                <value name="A1">
+                    <shadow type="text">
+                        <field name="TEXT"></field>
+                    </shadow>
+                </value>
+                <value name="A2">
+                    <shadow type="text">
+                        <field name="TEXT"></field>
+                    </shadow>
+                </value>
+            </block>
+            <label text="人脸信息检测" web-class="classLabel"></label>
+            <block type="bdai_face_detect"></block>
+            <block type="bdai_face_detect_num"></block>
+            <block type="bdai_face_detect_detail"></block>
+            <label text="人脸库识别" web-class="classLabel"></label>
+            <block type="bdai_face_search">
+                <value name="A1">
+                    <shadow type="text">
+                        <field name="TEXT"></field>
+                    </shadow>
+                </value>
+            </block>
+            <block type="bdai_face_search_success"></block>
+            <block type="bdai_face_search_detail"></block>
+            <label text="人体关键点识别" web-class="classLabel"></label>
+            <label text="通用场景识别" web-class="classLabel"></label>
+        </category>
+        <category name="阿里云">
+
+        </category>
+    </category>
+
+    <category name="深度学习">
+        <category name="数据导入">
+            <label text="对象变量" web-class="dlLabel"></label>
+            <block type="data_var_dataset"></block>
+            <block type="data_var_dataloader"></block>
+            <label text="一体导入" web-class="dlLabel"></label>
+            <block type="data_mix_create">
+                <value name="A1">
+                    <shadow type="text">
+                        <field name="TEXT">./data</field>
+                    </shadow>
+                </value>
+                <value name="A3">
+                    <shadow type="math_number">
+                        <field name="NUM">16</field>
+                    </shadow>
+                </value>
+                <value name="A5">
+                    <block type="transforms_get">
+                        <field name="VAR" variabletype="Transforms">trans</field>
+                    </block>
+                </value>
+                <value name="A7">
+                    <block type="transforms_get">
+                        <field name="VAR" variabletype="Transforms">trans</field>
+                    </block>
+                </value>
+            </block>
+            <label text="数据集" web-class="dlLabel"></label>
+            <block type="data_dataset_create">
+                <value name="A2">
+                    <shadow type="text">
+                        <field name="TEXT">./data</field>
+                    </shadow>
+                </value>
+                <value name="A5">
+                    <block type="transforms_get">
+                        <field name="VAR" variabletype="Transforms">trans</field>
+                    </block>
+                </value>
+            </block>
+            <block type="data_dataset_tensor_create"></block>
+            <label text="导入器" web-class="dlLabel"></label>
+            <block type="data_loader_create">
+                <value name="A3">
+                    <shadow type="math_number">
+                        <field name="NUM">16</field>
+                    </shadow>
+                </value>
+            </block>
+            <label text="遍历数据集" web-class="dlLabel"></label>
+            <block type="data_for_dataloader"></block>
+        </category>
+        <category name="数据增强">
+            <label text="对象变量" style="dlLabel"></label>
+            <button text="创建数据增强对象" callbackKey="varCreateTransforms"></button>
+            <block type="transforms_set"></block>
+            <block type="transforms_call"></block>
+            <block type="transforms_get"></block>
+            <label text="连接" style="dlLabel"></label>
+            <block type="transforms_compose">
+                <value name="LIST">
+                    <block type="variables_get">
+                        <field name="VAR">list</field>
+                    </block>
+                </value>
+            </block>
+            <label text="功能" style="dlLabel"></label>
+            <block type="transforms_toTensor">
+                <value name="IMAGE">
+                    <block type="variables_get">
+                        <field name="VAR">image</field>
+                    </block>
+                </value>
+            </block>
+            <block type="transforms_toPILImage">
+                <value name="TENSOR">
+                    <block type="variables_get">
+                        <field name="VAR">tensor</field>
+                    </block>
+                </value>
+            </block>
+            <block type="transforms_RandomCrop">
+                <value name="A0">
+                    <shadow type="math_number">
+                        <field name="NUM">640</field>
+                    </shadow>
+                </value>
+                <value name="A1">
+                    <shadow type="math_number">
+                        <field name="NUM">0</field>
+                    </shadow>
+                </value>
+            </block>
+            <block type="transforms_CenterCrop">
+                <value name="A0">
+                    <shadow type="math_number">
+                        <field name="NUM">640</field>
+                    </shadow>
+                </value>
+                <value name="A1">
+                    <shadow type="math_number">
+                        <field name="NUM">0</field>
+                    </shadow>
+                </value>
+            </block>
+            <block type="transforms_RandomResizedCrop">
+                <value name="A0">
+                    <shadow type="math_number">
+                        <field name="NUM">640</field>
+                    </shadow>
+                </value>
+                <value name="A1">
+                    <shadow type="math_number">
+                        <field name="NUM">0.08</field>
+                    </shadow>
+                </value>
+                <value name="A2">
+                    <shadow type="math_number">
+                        <field name="NUM">1</field>
+                    </shadow>
+                </value>
+            </block>
+            <block type="transforms_FiveCrop">
+                <value name="A0">
+                    <shadow type="math_number">
+                        <field name="NUM">640</field>
+                    </shadow>
+                </value>
+            </block>
+            <block type="transforms_TenCrop">
+                <value name="A0">
+                    <shadow type="math_number">
+                        <field name="NUM">640</field>
+                    </shadow>
+                </value>
+            </block>
+            <block type="transforms_RandomHorizontalFlip">
+                <value name="A0">
+                    <shadow type="math_number">
+                        <field name="NUM">0.5</field>
+                    </shadow>
+                </value>
+            </block>
+            <block type="transforms_RandomVerticalFlip">
+                <value name="A0">
+                    <shadow type="math_number">
+                        <field name="NUM">0.5</field>
+                    </shadow>
+                </value>
+            </block>
+            <block type="transforms_RandomRotation">
+                <value name="A0">
+                    <shadow type="math_number">
+                        <field name="NUM">-90</field>
+                    </shadow>
+                </value>
+                <value name="A1">
+                    <shadow type="math_number">
+                        <field name="NUM">90</field>
+                    </shadow>
+                </value>
+            </block>
+            <block type="transforms_Normalize">
+                <value name="A0">
+                    <shadow type="math_number">
+                        <field name="NUM">0.2</field>
+                    </shadow>
+                </value>
+                <value name="A1">
+                    <shadow type="math_number">
+                        <field name="NUM">0.3</field>
+                    </shadow>
+                </value>
+            </block>
+            <block type="transforms_NormalizeRgb"></block>
+            <block type="transforms_ColorJitter">
+                <value name="A1">
+                    <shadow type="math_number">
+                        <field name="NUM">-0.25</field>
+                    </shadow>
+                </value>
+                <value name="A2">
+                    <shadow type="math_number">
+                        <field name="NUM">0.25</field>
+                    </shadow>
+                </value>
+            </block>
+            <block type="transforms_Grayscale"></block>
+            <block type="transforms_RandomGrayscale">
+                <value name="A1">
+                    <shadow type="math_number">
+                        <field name="NUM">0.5</field>
+                    </shadow>
+                </value>
+            </block>
+        </category>
+        <category name="模型定义">
+            <label text="对象变量" style="dlLabel"></label>
+            <button text="创建模型对象" callbackKey="varCreateModule"></button>
+            <block type="modules_set"></block>
+            <block type="modules_call"></block>
+            <block type="modules_get"></block>
+            <label text="创建" style="dlLabel"></label>
+            <block type="modules_define">
+                <value name="INPUT">
+                    <block type="tensor_get">
+                        <field name="A0" variabletype="Tensor">x</field>
+                    </block>
+                </value>
+                <value name="OUTPUT">
+                    <block type="tensor_get">
+                        <field name="A0" variabletype="Tensor">x</field>
+                    </block>
+                </value>
+            </block>
+            <label text="容器" style="dlLabel"></label>
+            <block type="modules_sequential_create_e">
+                <statement name="A1">
+                    <block type="modules_sequential"></block>
+                </statement>
+            </block>
+            <block type="modules_sequential_e">
+                <statement name="A0">
+                    <block type="modules_sequential"></block>
+                </statement>
+            </block>
+            <label text="功能" style="dlLabel"></label>
+            <block type="modules_get_para"></block>
+            <label text="设备" style="dlLabel"></label>
+            <block type="modules_device"></block>
+            <block type="variables_set">
+                <field name="VAR">device</field>
+                <value name="VALUE">
+                    <block type="modules_device"></block>
+                </value>
+            </block>
+            <block type="variables_get">
+                <field name="VAR">device</field>
+            </block>
+            <block type="modules_module_to_device">
+                <value name="A0">
+                    <block type="modules_device"></block>
+                </value>
+            </block>
+        </category>
+        <category name="内置模型/层">
+            <label text="简洁使用 (属性IO为输入输出尺寸)" style="dlLabel"></label>
+            <block type="layers_linear"></block>
+            <block type="layers_conv"></block>
+            <block type="layers_pool"></block>
+            <block type="layers_sigmoid"></block>
+            <block type="layers_relu"></block>
+            <block type="layers_dropout"></block>
+            <label text="高级" style="dlLabel"></label>
+            <block type="layers_rnn"></block>
+            <block type="layers_lstm"></block>
+            <block type="layers_vision"></block>
+            <block type="layers_efficient"></block>
+            <label text="完整使用" style="dlLabel"></label>
+            <block type="layers_linear_full">
+                <value name="A0">
+                    <shadow type="math_number">
+                        <field name="NUM">10</field>
+                    </shadow>
+                </value>
+                <value name="A1">
+                    <shadow type="math_number">
+                        <field name="NUM">10</field>
+                    </shadow>
+                </value>
+            </block>
+            <block type="layers_conv_full"></block>
+            <block type="layers_pool_full"></block>
+        </category>
+        <category name="学习">
+            <label text="对象变量" style="dlLabel"></label>
+            <button text="创建学习对象" callbackKey="varCreateLearner"></button>
+            <block type="learner_set"></block>
+            <block type="learner_get"></block>
+            <label text="功能" style="dlLabel"></label>
+            <block type="learner_create"></block>
+            <block type="learner_use">
+                <value name="A3">
+                    <block type="variables_get_number">
+                        <field name="VAR" variabletype="Number">loss</field>
+                    </block>
+                </value>
+            </block>
+            <block type="learner_onehot_acc"></block>
+            <label text="损失函数" style="dlLabel"></label>
+            <block type="loss_new"></block>
+            <label text="优化器" style="dlLabel"></label>
+            <block type="optimizer_new"></block>
+        </category>
+        <category name="训练/测试"></category>
+    </category>
+
+    <category name="张量运算">
+        <category name="张量">
+            <label text="张量变量" style="dlLabel"></label>
+            <button text="创建张量" callbackKey="varCreateTensor"></button>
+            <block type="tensor_set"></block>
+            <block type="tensor_get"></block>
+            <label text="创建" style="dlLabel"></label>
+            <block type="tensor_create_shape"></block>
+            <block type="tensor_create_like"></block>
+            <block type="tensor_create_from"></block>
+            <label text="功能" style="dlLabel"></label>
+            <block type="lists_new_num"></block>
+            <block type="tensor_shape_get"></block>
+            <block type="tensor_shape_set"></block>
+            <block type="tensor_length"></block>
+        </category>
+        <category name="Numpy"></category>
+    </category>
+</xml>

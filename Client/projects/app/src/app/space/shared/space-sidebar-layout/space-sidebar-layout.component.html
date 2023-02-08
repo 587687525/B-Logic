@@ -1,0 +1,14 @@
+<div class="layout">
+  <div fxLayout class="header no-select">
+    <i nz-icon class="header-icon" [nzType]="entry.icon"></i>
+    <p fxFlex="grow" class="header-text">{{ entry.name }}</p>
+    <ng-content select="[action]"></ng-content>
+    <app-toolbar-divider></app-toolbar-divider>
+    <app-icon-button (click)="onSetBtn()">icon-set</app-icon-button>
+    <app-icon-button (click)="onHideBtn()">minus</app-icon-button>
+  </div>
+  <app-divider class="divider"></app-divider>
+  <div class="body">
+    <ng-content></ng-content>
+  </div>
+</div>

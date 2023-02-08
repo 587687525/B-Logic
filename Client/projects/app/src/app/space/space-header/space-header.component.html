@@ -1,0 +1,28 @@
+<div class="layout" [fxShow]="state.isHeaderVisible$ | async">
+  <div
+    fxLayout
+    fxLayoutAlign="space-around center"
+    class="main"
+    (click)="window.open('https://logic.autojs.org')"
+  >
+    <div fxLayout fxLayoutAlign="space-around center" class="left">
+      <img class="logo-img" src="assets/logo.png" />
+      <span class="logo-text">B-Logic</span>
+    </div>
+    <div class="right">
+      <ul nz-menu nzMode="horizontal" nzTheme="dark">
+        <li nz-menu-item *ngFor="let link of links">
+          <a [href]="link.url">{{ link.text }}</a>
+        </li>
+      </ul>
+    </div>
+  </div>
+  <app-icon-button
+    color="#505050"
+    nz-tooltip="隐藏头部栏"
+    nzTooltipPlacement="bottomRight"
+    (click)="state.isHeaderVisible$.next(false)"
+  >
+    icon-chevron-up
+  </app-icon-button>
+</div>

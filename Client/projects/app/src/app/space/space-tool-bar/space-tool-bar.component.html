@@ -1,0 +1,304 @@
+<div class="layout hr-ant" fxLayout>
+  <label
+    nz-checkbox
+    *ngIf="isBlockFile"
+    [(ngModel)]="holdBox"
+    (ngModelChange)="onChangeHoldBox()"
+    >保持栏目</label
+  >
+  <app-icon-button
+    class="moreSetting"
+    nz-dropdown
+    [nzDropdownMenu]="moreSettingMenu"
+    [nzClickHide]="false"
+    nzPlacement="bottomCenter"
+    >icon-set</app-icon-button
+  >
+  <nz-dropdown-menu #moreSettingMenu="nzDropdownMenu">
+    <ul nz-menu>
+      <li nz-menu-item>
+        <label
+          nz-checkbox
+          [(ngModel)]="unfoldXml"
+          (ngModelChange)="onChangeUnfoldXml()"
+          >展开XML</label
+        >
+      </li>
+      <li nz-menu-item *ngIf="isBlockFile">
+        <label
+          nz-checkbox
+          [(ngModel)]="syncCode"
+          (ngModelChange)="onChangeSyncCode()"
+          >同步代码</label
+        >
+      </li>
+    </ul>
+  </nz-dropdown-menu>
+  <app-toolbar-divider></app-toolbar-divider>
+  <app-icon-button
+    color="#5A76D4"
+    nz-tooltip="撤销 [Ctrl+Z]"
+    nzTooltipPlacement="bottom"
+    (click)="onUndo()"
+  >
+    icon-undo
+  </app-icon-button>
+  <app-icon-button
+    color="#5A76D4"
+    nz-tooltip="重做 [Ctrl+Shift+Z]"
+    nzTooltipPlacement="bottom"
+    (click)="onRedo()"
+  >
+    icon-redo
+  </app-icon-button>
+  <app-toolbar-divider [hidden]="isEditorLogicMode"></app-toolbar-divider>
+  <nz-select
+    class="xml-selector"
+    [(ngModel)]="targetXml"
+    nzSize="small"
+    [hidden]="isEditorLogicMode"
+  >
+    <nz-option
+      *ngFor="let xml of xmlList"
+      [nzValue]="xml"
+      [nzLabel]="xml.tip"
+    ></nz-option>
+  </nz-select>
+  <app-icon-button
+    [color]="this.state.isLight ? '#666666' : '#bbbbbb'"
+    nz-tooltip="刷新XML列表"
+    nzTooltipPlacement="bottom"
+    (click)="freshXmlList()"
+    [hidden]="isEditorLogicMode"
+  >
+    icon-refresh
+  </app-icon-button>
+  <app-toolbar-divider
+    [hidden]="!isBlockFile || !isEditorLogicMode"
+  ></app-toolbar-divider>
+  <span class="tip" [hidden]="!isBlockFile || !isEditorLogicMode">生成: </span>
+  <nz-button-group nzSize="small" [hidden]="!isBlockFile || !isEditorLogicMode">
+    <button nz-button (click)="onToCode()">
+      <i nz-icon nzType="right"></i>
+      代码
+    </button>
+    <button nz-button (click)="onToBlock()">
+      <i nz-icon nzType="left"></i>
+      图形
+    </button>
+  </nz-button-group>
+  <app-toolbar-divider></app-toolbar-divider>
+  <app-icon-button
+    color="#5A76D4"
+    [size]="20"
+    nz-tooltip="深色主题"
+    nzTooltipPlacement="bottom"
+    (click)="changeTheme(false)"
+    [hidden]="!brightTheme"
+    >icon-nightmode-fill</app-icon-button
+  >
+  <app-icon-button
+    color="#5A76D4"
+    [size]="18"
+    nz-tooltip="亮色主题"
+    nzTooltipPlacement="bottom"
+    (click)="changeTheme(true)"
+    [hidden]="brightTheme"
+    >icon-Daytimemode-fill</app-icon-button
+  >
+  <app-icon-button
+    color="#5A76D4"
+    nz-tooltip="分享"
+    nzTooltipPlacement="bottom"
+    (click)="onShare()"
+    >icon-share</app-icon-button
+  >
+  <div class="middle-space" fxFlex="grow"></div>
+  <nz-input-group
+    class="deviceIpInput"
+    [nzAddOnBefore]="deviceBeforeTemplate"
+    [nzSuffix]="deviceSuffix"
+    nzSize="small"
+  >
+    <input
+      type="text"
+      nz-input
+      [(ngModel)]="deviceAddress"
+      placeholder="设备IP地址"
+    />
+    <ng-template #deviceBeforeTemplate>
+      <nz-select [ngModel]="connectionProtocol" nzSize="small">
+        <nz-option nzLabel="ws://" nzValue="ws://"></nz-option>
+        <nz-option nzLabel="wss://" nzValue="wss://"></nz-option>
+      </nz-select>
+    </ng-template>
+    <ng-template #deviceSuffix>
+      <i
+        nz-icon
+        nzType="question"
+        class="deviceHelp"
+        nz-tooltip="连接教程"
+        nzTooltipPlacement="bottom"
+        (click)="openConnectionHelp()"
+      ></i>
+    </ng-template>
+  </nz-input-group>
+  <app-icon-button
+    [fill]="true"
+    color="#1890FF"
+    nz-tooltip="连接设备"
+    nzTooltipPlacement="bottom"
+    (click)="onConnectDevice()"
+  >
+    api
+  </app-icon-button>
+  <app-toolbar-divider></app-toolbar-divider>
+  <nz-select
+    class="editor-mode-selector"
+    [(ngModel)]="runMode"
+    (ngModelChange)="onRunModeChange()"
+    nzSize="small"
+  >
+    <nz-option [nzValue]="RunMode.Browser" nzLabel="在线运行"></nz-option>
+    <nz-option [nzValue]="RunMode.Device" nzLabel="远程运行"></nz-option>
+  </nz-select>
+  <app-icon-button
+    color="#59A869"
+    nz-tooltip="运行 [Ctrl+6]"
+    nzTooltipPlacement="bottom"
+    (click)="onRun()"
+  >
+    icon-play
+  </app-icon-button>
+  <app-icon-button
+    color="#C75450"
+    nz-tooltip="停止 [Ctrl+7]"
+    nzTooltipPlacement="bottom"
+  >
+    icon-stop
+  </app-icon-button>
+  <app-toolbar-divider></app-toolbar-divider>
+  <nz-button-group nzSize="small">
+    <button
+      nz-button
+      (click)="modalVisible = true"
+      nz-tooltip="打开项目"
+      nzTooltipPlacement="bottom"
+      #openProjectBtn
+    >
+      <i nz-icon nzType="folder-open"></i>
+      {{ openMode }}
+    </button>
+    <button
+      nz-button
+      nz-dropdown
+      [nzDropdownMenu]="openWayMenu"
+      nzPlacement="bottomRight"
+    >
+      <i nz-icon nzType="ellipsis"></i>
+      <nz-dropdown-menu #openWayMenu="nzDropdownMenu">
+        <ul nz-menu>
+          <ul nz-submenu nzTitle="打开本地项目">
+            <li nz-menu-item (click)="onOpenModeChange(OpenMode.LocalFile)">
+              单文件
+            </li>
+            <li nz-menu-item (click)="onOpenModeChange(OpenMode.LocalFolder)">
+              文件夹
+            </li>
+            <li nz-menu-item (click)="onOpenModeChange(OpenMode.LocalZip)">
+              压缩包
+            </li>
+          </ul>
+          <li nz-menu-item (click)="onOpenModeChange(OpenMode.Browser)">
+            打开浏览器中项目
+          </li>
+          <li nz-menu-item (click)="onOpenModeChange(OpenMode.Cloud)">
+            打开云端项目
+          </li>
+          <li nz-menu-item (click)="onOpenModeChange(OpenMode.Device)">
+            打开设备中项目
+          </li>
+        </ul>
+      </nz-dropdown-menu>
+    </button>
+  </nz-button-group>
+  <nz-button-group nzSize="small">
+    <button
+      nz-button
+      (click)="onSaveProject()"
+      nz-tooltip="保存项目"
+      nzTooltipPlacement="bottom"
+      #openSaveBtn
+    >
+      <i nz-icon nzType="save"></i>
+      {{ saveMode }}
+    </button>
+    <button
+      nz-button
+      nz-dropdown
+      [nzDropdownMenu]="saveModeMenu"
+      nzPlacement="bottomRight"
+    >
+      <i nz-icon nzType="ellipsis"></i>
+      <nz-dropdown-menu #saveModeMenu>
+        <ul nz-menu>
+          <li nz-menu-item (click)="onSaveModeChange(SaveMode.Local)">
+            本地保存
+          </li>
+          <li nz-menu-item (click)="onSaveModeChange(SaveMode.Another)">
+            本地另存为
+          </li>
+          <li nz-menu-item (click)="onSaveModeChange(SaveMode.Browser)">
+            浏览器缓存
+          </li>
+          <li nz-menu-item (click)="onSaveModeChange(SaveMode.Cloud)">
+            云端保存
+          </li>
+          <li nz-menu-item (click)="onSaveModeChange(SaveMode.Device)">
+            设备保存
+          </li>
+        </ul>
+      </nz-dropdown-menu>
+    </button>
+  </nz-button-group>
+  <input
+    type="file"
+    (change)="onSelectProject()"
+    webkitdirectory
+    directory
+    #folderChooser
+    hidden
+  />
+  <input
+    type="file"
+    (change)="onSelectProject()"
+    accept="text/javascript"
+    #fileChooser
+    hidden
+  />
+  <input
+    type="file"
+    (change)="onSelectProject()"
+    accept=".zip"
+    #zipChooser
+    hidden
+  />
+  <app-toolbar-divider
+    [fxHide]="state.isHeaderVisible$ | async"
+  ></app-toolbar-divider>
+  <app-icon-button
+    nz-tooltip="显示头部栏"
+    nzTooltipPlacement="bottomRight"
+    [fxHide]="state.isHeaderVisible$ | async"
+    (click)="state.isHeaderVisible$.next(true)"
+  >
+    vertical-align-bottom
+  </app-icon-button>
+  <nz-modal
+    [(nzVisible)]="modalVisible"
+    nzTitle="打开新项目将覆盖当前项目，请确认是否已经保存。是否继续打开？"
+    (nzOnCancel)="modalVisible = false"
+    (nzOnOk)="onOpenProject()"
+  >
+  </nz-modal>
+</div>

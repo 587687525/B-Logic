@@ -1,0 +1,94 @@
+@import (multiple)
+  '../../../../../node_modules/ng-zorro-antd/src/style/themes/default';
+@import './base';
+
+@primary-color: #00a86b;
+@border-color: #bbbbbb;
+@line-color: #cfcfcf;
+
+body {
+  background-color: #f2f2f2;
+}
+
+.hr-ant {
+  .ant-btn {
+    border: 1px solid @border-color;
+  }
+  .ant-btn:hover {
+    border-color: @primary-color;
+  }
+  .ant-btn:focus {
+    border-color: @primary-color;
+  }
+  .ant-btn:not(:hover):not(:focus) {
+    i {
+      color: #606060;
+    }
+  }
+
+  .ant-radio-button-wrapper {
+    font-size: 12px;
+    border-color: @border-color;
+  }
+  .ant-radio-button-wrapper:first-child {
+    border-color: @border-color;
+  }
+  .ant-radio-button-wrapper:last-child {
+    border-color: @border-color;
+  }
+  .ant-radio-button-wrapper-checked:not(.ant-radio-button-wrapper-disabled) {
+    color: @primary-color;
+    border-color: @primary-color;
+  }
+
+  .ant-select {
+    font-size: 12px;
+  }
+  .ant-select:not(.ant-select-customize-input) .ant-select-selector {
+    border-color: @border-color;
+  }
+  .ant-select:not(.ant-select-disabled):hover .ant-select-selector {
+    border-color: @primary-color;
+  }
+
+  .ant-checkbox-inner {
+    border-color: @border-color;
+  }
+
+  .ant-input-affix-wrapper {
+    border-color: @border-color;
+  }
+  .ant-input-group-addon {
+    border-color: @border-color;
+  }
+
+  .ant-tree-indent-unit {
+    width: 1px;
+    margin: 0 6px 0 11px;
+    background: @line-color;
+  }
+
+  .ant-menu {
+  }
+  .ant-menu-inline {
+  }
+}
+
+::-webkit-scrollbar-thumb {
+  background-color: #ccc;
+}
+::-webkit-scrollbar-thumb:hover {
+  background-color: #bbb;
+}
+
+.ant-dropdown-menu-item:hover {
+  background-color: #d8d8d8;
+}
+.cdk-overlay-backdrop {
+  background-color: #00000015;
+}
+.modal-tip {
+  margin: 10px 4px 0 4px;
+  font-size: 12px;
+  color: #666;
+}

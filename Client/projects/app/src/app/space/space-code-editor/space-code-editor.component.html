@@ -1,0 +1,9 @@
+<div class="wrapper">
+  <ngx-monaco-editor
+    [options]="editorOptions"
+    [(ngModel)]="code"
+    (ngModelChange)="codeChange.emit(code)"
+    (onInit)="onInit($event)"
+  ></ngx-monaco-editor>
+  <!--  <div id="monaco-editor"></div>-->
+</div>

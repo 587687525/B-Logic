@@ -1,0 +1,18 @@
+<div *ngIf="icon" class="layout">
+  <i
+    nz-icon
+    *ngIf="!icon.startsWith('icon-')"
+    [nzType]="icon"
+    [ngStyle]="{ color: showColor, 'font-size': size + 'px' }"
+    [nzTheme]="fill ? 'fill' : 'outline'"
+  ></i>
+  <i
+    nz-icon
+    *ngIf="icon.startsWith('icon-')"
+    [nzIconfont]="icon"
+    [ngStyle]="{ color: showColor, 'font-size': size + 'px' }"
+  ></i>
+</div>
+<div hidden #iconWrapper>
+  <ng-content></ng-content>
+</div>

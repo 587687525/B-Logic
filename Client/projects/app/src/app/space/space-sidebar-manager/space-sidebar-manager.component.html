@@ -1,0 +1,93 @@
+<div class="layout" fxLayout>
+  <div class="btns btns-left no-select">
+    <ng-container *ngFor="let item of items">
+      <div
+        *ngIf="item.position.includes('left')"
+        [hidden]="!item.showTab"
+        class="btn"
+        (click)="onBtnClick(item)"
+        [ngClass]="item.isOpen ? 'btn btn-selected' : 'btn'"
+        [ngStyle]="{ height: getNameLength(item.name) }"
+        [nz-tooltip]="item.tooltip"
+        [nzTooltipMouseEnterDelay]="0.4"
+      >
+        <p class="btn-text btn-text-left">{{ item.name }}</p>
+        <i
+          nz-icon
+          class="icon-button icon-button-left"
+          [nzType]="item.icon"
+        ></i>
+      </div>
+    </ng-container>
+  </div>
+  <app-divider type="vertical"></app-divider>
+  <div fxLayout class="sidebars sidebars-left">
+    <ng-container *ngFor="let item of items">
+      <div
+        class="sidebar-holder"
+        *ngIf="item.position.includes('left')"
+        [ngStyle]="{
+          display: item.isOpen ? 'inline-block' : 'none',
+          width: item.width + 'px'
+        }"
+      >
+        <div class="sidebar sidebar-left">
+          <ng-template [cdkPortalOutlet]="item.portal"></ng-template>
+        </div>
+        <div
+          class="drag-split-line drag-split-line-left"
+          (mousedown)="onChangeWidth($event, item)"
+        ></div>
+      </div>
+    </ng-container>
+  </div>
+  <ng-content class="main"></ng-content>
+  <div fxLayout class="sidebars sidebars-right">
+    <ng-container *ngFor="let item of items">
+      <div
+        class="sidebar-holder"
+        *ngIf="item.position.includes('right')"
+        [ngStyle]="{
+          display: item.isOpen ? 'inline-block' : 'none',
+          width: item.width + 'px'
+        }"
+      >
+        <div class="sidebar sidebar-right">
+          <ng-template [cdkPortalOutlet]="item.portal"></ng-template>
+        </div>
+        <div
+          class="drag-split-line drag-split-line-right"
+          (mousedown)="onChangeWidth($event, item)"
+        ></div>
+      </div>
+    </ng-container>
+    <app-divider type="vertical"></app-divider>
+    <div class="btns btns-right no-select">
+      <ng-container *ngFor="let item of items">
+        <div
+          *ngIf="item.position.includes('right')"
+          [hidden]="!item.showTab"
+          class="btn"
+          (click)="onBtnClick(item)"
+          [ngStyle]="
+            item.isOpen
+              ? {
+                  height: getNameLength(item.name),
+                  background: getThirdBackground()
+                }
+              : { height: getNameLength(item.name) }
+          "
+          [nz-tooltip]="item.tooltip"
+          [nzTooltipMouseEnterDelay]="0.4"
+        >
+          <p class="btn-text btn-text-right">{{ item.name }}</p>
+          <i
+            nz-icon
+            class="icon-button icon-button-right"
+            [nzType]="item.icon"
+          ></i>
+        </div>
+      </ng-container>
+    </div>
+  </div>
+</div>

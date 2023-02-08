@@ -1,0 +1,33 @@
+
+.rb-block-holder {
+
+}
+
+.rb-block-holder * {
+  font-size: 14px;
+}
+
+.rb-block-holder text {
+  fill: #ffffff;
+  pointer-events: none;
+  user-select: none;
+}
+
+.rb-block-holder path {
+  cursor: grab;
+}
+
+
+.rb-field text {
+  fill: #000000;
+}
+
+.rb-field rect {
+  stroke: #ffffff;
+  stroke-width: 0;
+}
+
+.rb-field:hover rect {
+  stroke-width: 2px;
+}
+

@@ -1,0 +1,35 @@
+<div class="layout" fxLayout>
+  <div class="main">
+    <div class="shape-area" fxFlex="1 1 auto">
+      <app-space-block-editor
+        [type]="file.type"
+        (change)="onBlockChange($event)"
+        (init)="init()"
+      ></app-space-block-editor>
+    </div>
+    <div
+      class="split-line"
+      [ngStyle]="{ display: showSplitLine() ? 'inline-block' : 'none' }"
+      (mousedown)="onChangeWidth($event)"
+    ></div>
+    <app-space-code-editor
+      [(code)]="code"
+      [language]="getLanguage()"
+      [ngStyle]="
+        onlyClassic()
+          ? {
+              position: 'absolute',
+              top: 0,
+              left: 0,
+              bottom: 0,
+              right: 0
+            }
+          : {
+              display: showClassic() ? 'inline-block' : 'none',
+              width: codeAreaWidth + 'px'
+            }
+      "
+      class="code-area"
+    ></app-space-code-editor>
+  </div>
+</div>
